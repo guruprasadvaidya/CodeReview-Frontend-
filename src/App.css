@@ -1,0 +1,64 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,body,#root{
+  height: 100%;
+  width: 100%;
+}
+
+main{
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right{
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+}
+
+.left{
+  background-color: #181818;  /* Deep Black */
+  border: 2px solid #303030;  /* Soft Dark Border */
+  position: relative;
+}
+
+.left .code,
+.code pre ,
+ .code pre code{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  /* background-color: black; */
+}
+
+.right{
+  background-color: #252525;  /* Neutral Dark Gray */
+  border: 2px solid #303030;  /* Soft Dark Border */
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  overflow: auto;
+}
+.left, .right {
+  border-radius: 12px;  /* Soft Rounded Corners */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);  /* Smooth Shadow */
+}
+.left .review{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(111, 227, 245);
+  padding: 0.5rem 2rem;
+  border-radius: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
