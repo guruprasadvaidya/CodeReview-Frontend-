@@ -16,8 +16,7 @@ function App() {
   const [error, setError] = useState(null); // Error state
 
   // ✅ Fallback backend URL in case .env is missing
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
+  const backendUrl = "https://codereview-backend-1wbh.onrender.com";
 
   useEffect(() => {
     Prism.highlightAll();
