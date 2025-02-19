@@ -16,7 +16,8 @@ function App() {
   const [error, setError] = useState(null); // Error state
 
   // ✅ Fallback backend URL in case .env is missing
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:10000";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 
   useEffect(() => {
     Prism.highlightAll();
