@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: #181818; /* ✅ Kept original background */
+  color: white;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+}
+
+/* ✅ Left Container (Editor Area) */
+.left {
+  background-color: #181818;
+  border: 2px solid #303030;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+/* ✅ Code Editor Fix - Removes white border when clicked */
+.left .code-editor {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 10px;
+  min-height: 250px;
+}
+
+.code-editor textarea:focus,
+.code-editor textarea:active {
+  outline: none !important;
+  border: none !important;
+}
+
+/* ✅ Placeholder Styling (Top-Left) */
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: #888;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* ✅ Buttons Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0.8rem;
+}
+
+/* ✅ Buttons - Now all compact */
+.review, .remove, .copy-code {
+  padding: 0.4rem 1rem;  /* ✅ Reduced horizontal padding */
+  border-radius: 5px;  /* ✅ Softer corners */
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.85rem;  /* ✅ Slightly smaller font size */
+  border: none;
+  transition: all 0.2s ease-in-out;
+  width: auto; /* ✅ No unnecessary width */
+  text-align: center;
+  min-width: 100px; /* ✅ Ensures uniformity */
+}
+
+/* ✅ Review Code Button (Blue) */
+.review {
+  background-color: rgb(111, 227, 245);
+  color: white;
+  font-weight: 600;
+}
+
+.review:hover {
+  background-color: rgb(81, 200, 230);
+}
+
+/* ✅ Remove Button (Red) */
+.remove {
+  background-color: #ff5c5c;
+  color: white;
+  font-weight: 600;
+}
+
+.remove:hover {
+  background-color: #e74c4c;
+}
+
+/* ✅ Copy Code Button (Green - Same Size as Others) */
+.copy-code {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.85rem;
+  border: none;
+  width: auto;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  align-self: center; /* ✅ Centers in right container */
+  margin-top: auto; /* ✅ Moves button to the bottom */
+}
+
+.copy-code:hover {
+  background-color: #45a049;
+}
+
+/* ✅ Right Container (Review Section) */
+.right {
+  background-color: #252525;
+  border: 2px solid #303030;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  overflow-y: auto;
+  max-height: 100%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✅ Copy Notification */
+.copy-message {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* ✅ Borders & Shadows for a Clean Look */
+.left, .right {
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
